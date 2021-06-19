@@ -49,7 +49,8 @@ function setup() {
  	box3=new Box(240,600-2.5,25,170);
 
  
-	
+	 console.log(packageBody)
+ 
   
 }
 
@@ -68,21 +69,23 @@ function draw() {
   box2.display();
  box3.display();
  
- keyPressed();
+ 
 }
 function keyPressed(){
 	
 	if(keyCode===RIGHT_ARROW){
-		helicopter.x=helicopter.x+10
-		translation={x:10,y:0}
-		Matter.Body.translate(packageBody,translation)
+		helicopter.x=helicopter.x+100
+		translation={x:100,y:0}
+		if(packageBody.position.y===200){
+		Matter.Body.translate(packageBody,translation)}
 		 
 	 }
 	  if(keyCode===LEFT_ARROW){
-		helicopter.x=helicopter.x-10
-		translation={x:-10,y:0}
+		helicopter.x=helicopter.x-100
+		translation={x:-100,y:0}
+		if(packageBody.position.y===200){
 		Matter.Body.translate(packageBody,translation)
-	
+	  }
 	}
 	if(keyCode===DOWN_ARROW){
 	
